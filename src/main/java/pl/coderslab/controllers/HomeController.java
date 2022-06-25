@@ -21,10 +21,10 @@ public class HomeController {
         this.donationRepository = donationRepository;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String homeAction(Model model){
-        List<Institution> institutionList = institutionRepository.findAll();
-        model.addAttribute("institutions", institutionList);
+        List<Institution> institutions = institutionRepository.findAll();
+        model.addAttribute("institutions", institutions);
 
         Integer sumOfBags = donationRepository.sumOfBags();
         model.addAttribute("sumOfBags", Optional.ofNullable(sumOfBags).orElse(0));

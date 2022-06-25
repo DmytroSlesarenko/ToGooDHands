@@ -29,6 +29,8 @@ public class Donation {
 
     private String zipCode;
 
+    private String phoneNumber;
+
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private LocalDate date;
 
@@ -37,7 +39,7 @@ public class Donation {
 
     private String pickUpComment;
 
-    public Donation(Long id, Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDate date, LocalTime time, String pickUpComment) {
+    public Donation(Long id, Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String phoneNumber, LocalDate date, LocalTime time, String pickUpComment) {
         this.id = id;
         this.quantity = quantity;
         this.categories = categories;
@@ -45,6 +47,7 @@ public class Donation {
         this.street = street;
         this.city = city;
         this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
         this.date = date;
         this.time = time;
         this.pickUpComment = pickUpComment;
@@ -109,6 +112,14 @@ public class Donation {
         this.zipCode = zipCode;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public LocalDate getDate() {
         return date;
     }
@@ -135,17 +146,18 @@ public class Donation {
 
     @Override
     public String toString() {
-        return "Donation {" +
-                "id = " + id +
-                ", quantity = " + quantity +
-                ", categories = " + categories +
-                ", institution = " + institution +
-                ", street = '" + street + '\'' +
-                ", city = '" + city + '\'' +
-                ", zipCode = '" + zipCode + '\'' +
-                ", date = " + date +
-                ", time = " + time +
-                ", pickUpComment = '" + pickUpComment + '\'' +
+        return "Donation{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", categories=" + categories +
+                ", institution=" + institution +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", date=" + date +
+                ", time=" + time +
+                ", pickUpComment='" + pickUpComment + '\'' +
                 '}';
     }
 }
