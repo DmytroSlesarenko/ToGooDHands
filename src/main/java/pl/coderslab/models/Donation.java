@@ -39,10 +39,9 @@ public class Donation {
 
     private String pickUpComment;
 
-    public Donation(Long id, Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String phoneNumber, LocalDate date, LocalTime time, String pickUpComment) {
+    public Donation(Long id, Integer quantity, Institution institution, String street, String city, String zipCode, String phoneNumber, LocalDate date, LocalTime time, String pickUpComment) {
         this.id = id;
         this.quantity = quantity;
-        this.categories = categories;
         this.institution = institution;
         this.street = street;
         this.city = city;
