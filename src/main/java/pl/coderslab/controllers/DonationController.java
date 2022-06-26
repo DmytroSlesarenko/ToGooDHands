@@ -43,13 +43,7 @@ public class DonationController {
     }
 
     @PostMapping("/add/donation")
-    public String addDonation(Donation donation, HttpServletRequest request){
-        List<String> categoriesId = List.of(request.getParameterValues("categories"));
-        List<Category> categories = categoriesId.stream()
-                        .map(Long::parseLong)
-                        .map(categoryId -> categoryRepository.findById(categoryId).get())
-                        .collect(Collectors.toList());
-        donation.setCategories(categories);
+    public String addDonation(Donation donation){
         donationRepository.save(donation);
         return "donationFormConfirmation";
     }
