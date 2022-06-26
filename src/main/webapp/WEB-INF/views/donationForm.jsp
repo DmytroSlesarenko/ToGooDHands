@@ -62,9 +62,9 @@
                 <c:forEach items="${categories}" var="item">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:checkbox path="categories" value="${item.id}"/>
+                            <form:checkbox cssClass="category" path="categories" title="${item.name}" value="${item.id}"/>
                             <span class="checkbox"></span>
-                            <span class="description">${item.name}</span>
+                            <span class="description category">${item.name}</span>
                         </label>
                     </div>
                 </c:forEach>
@@ -81,7 +81,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <form:input path="quantity" type="number" step="1" min="1"/>
+                        <form:input cssClass="quantity" path="quantity" type="number" step="1" min="1"/>
                     </label>
                 </div>
 
@@ -91,15 +91,13 @@
                 </div>
             </div>
 
-
-
             <!-- STEP 3 -->
             <div data-step="3">
                 <h3>Wybierz organizacje, której chcesz pomóc:</h3>
                 <c:forEach items="${institutions}" var="item">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:radiobutton path="institution" value="${item.id}"/>
+                            <form:radiobutton cssClass="institution" path="institution" value="${item.id}" title="${item.name}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
                   <div class="title">Fundacja “${item.name}”</div>
@@ -126,27 +124,27 @@
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
                             <label> Ulica
-                                <form:input path="street"/>
+                                <form:input cssClass="street" path="street"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label> Miasto
-                                <form:input path="city"/>
+                                <form:input cssClass="city" path="city"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Kod pocztowy
-                                <form:input path="zipCode"/>
+                                <form:input cssClass="postCode" path="zipCode"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Numer telefonu
-                                <form:input path="phoneNumber" pattern="[+][0-9]{2}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}" placeholder="+48 *** *** ***"/>
+                                <form:input cssClass="phone" path="phoneNumber" pattern="[+][0-9]{2}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}" placeholder="+48 *** *** ***"/>
                             </label>
                         </div>
                     </div>
@@ -154,24 +152,24 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input type="date" path="date"/> </label>
+                            <label> Data <form:input cssClass="date" type="date" path="date"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <form:input type="time" path="time"/> </label>
+                            <label> Godzina <form:input cssClass="time" type="time" path="time"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <form:textarea path="pickUpComment" rows="5"/>
+                                <form:textarea cssClass="comment" path="pickUpComment" rows="5"/>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="summary" type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -185,16 +183,12 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span id="quantity-category" class="summary--text"></span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
-                                >
+                                <span id="institution" class="summary--text"></span>
                             </li>
                         </ul>
                     </div>
@@ -202,27 +196,20 @@
                     <div class="form-section form-section--columns">
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
-                            <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                            <ul id="address-phone">
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
-                            <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                            <ul id="date-time-description">
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step">Wstecz</button>
+                    <button id="back" type="button" class="btn prev-step">Wstecz</button>
                     <button type="submit" class="btn">Potwierdzam</button>
                 </div>
             </div>

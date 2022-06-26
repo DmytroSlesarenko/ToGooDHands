@@ -26,6 +26,7 @@
             <li><a href="/home#steps" class="btn btn--without-border">O co chodzi?</a></li>
             <li><a href="/home#about-us" class="btn btn--without-border">O nas</a></li>
             <li><a href="/home#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="/add/donation" class="btn btn--without-border">Przekaż dary</a></li>
             <li><a href="/home#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
