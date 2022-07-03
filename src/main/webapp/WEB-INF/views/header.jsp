@@ -17,16 +17,22 @@
 <header class="header--main-page">
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            <li class="logged-user">
+                ${user.firstName} ${user.lastName}
+                <ul class="dropdown">
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Moje zbiórki</a></li>
+                    <li><a href="/logout">Wyloguj</a></li>
+                </ul>
+            </li>
         </ul>
 
         <ul>
-            <li><a href="/home" class="btn btn--without-border active">Start</a></li>
-            <li><a href="/home#steps" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="/home#about-us" class="btn btn--without-border">O nas</a></li>
-            <li><a href="/home#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="/add/donation" class="btn btn--without-border">Przekaż dary</a></li>
-            <li><a href="/home#contact" class="btn btn--without-border">Kontakt</a></li>
+            <li><a href="/donation" class="btn btn--without-border active">Start</a></li>
+            <li><a href="/donation#steps" class="btn btn--without-border">O co chodzi?</a></li>
+            <li><a href="/donation#about-us" class="btn btn--without-border">O nas</a></li>
+            <li><a href="/donation#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="/add" class="btn btn--without-border">Przekaż dary</a></li>
+            <li><a href="/donation#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
