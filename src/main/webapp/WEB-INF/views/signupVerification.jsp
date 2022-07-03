@@ -9,20 +9,22 @@
     <h2>Załóż konto</h2>
     <h3 class="error">${error}</h3>
     <form:form action="/signup" method="post" modelAttribute="user">
-        <div class="form-group">
-            <form:input path="firstName"/>
-        </div>
-        <div class="form-group">
-            <form:input path="lastName"/>
-        </div>
-        <div class="form-group">
-            <form:input path="email"/>
-        </div>
-        <div class="form-group">
-            <form:password path="password"/>
-        </div>
-        <div class="form-group">
-            <input type="password" name="password2" placeholder="Powtórz hasło" />
+        <div class="signup">
+            <div class="form-group">
+                <form:input path="firstName" placeholder="Imię" required="true"/>
+            </div>
+            <div class="form-group">
+                <form:input path="lastName" placeholder="Nazwisko" required="true"/>
+            </div>
+            <div class="form-group">
+                <form:input path="email" placeholder="Email" required="true"/>
+            </div>
+            <div class="form-group">
+                <form:password path="password" placeholder="Hasło" required="true"/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password2" placeholder="Powtórz hasło" required/>
+            </div>
         </div>
 
         <div class="form-group form-group--buttons">

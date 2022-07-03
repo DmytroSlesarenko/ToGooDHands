@@ -19,9 +19,6 @@
                 <form:input path="email" placeholder="Email" required="true"/>
             </div>
             <div class="form-group">
-                <form:input path="username" placeholder="Nazwa użytkownika" required="true"/>
-            </div>
-            <div class="form-group">
                 <form:password path="password" placeholder="Hasło" required="true"/>
             </div>
             <div class="form-group">
